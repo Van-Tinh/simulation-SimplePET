@@ -1,0 +1,115 @@
+/gate/geometry/setMaterialDatabase    data/GateMaterials.db
+
+#     W O R L D
+#
+/gate/world/geometry/setXLength       50. cm
+/gate/world/geometry/setYLength       50. cm
+/gate/world/geometry/setZLength       50. cm
+/gate/world/setMaterial Air
+/gate/world/vis/setVisible 0
+
+
+#	CPET 
+/gate/world/daughters/name CPET
+/gate/world/daughters/insert cylinder
+/gate/CPET/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/CPET/geometry/setRmax 20.0 cm
+/gate/CPET/geometry/setRmin 0 cm
+/gate/CPET/geometry/setHeight 4 cm
+/gate/CPET/setMaterial Air
+/gate/CPET/vis/forceWireframe
+/gate/CPET/vis/setColor white
+/gate/CPET/vis/setVisible 0
+
+#	SECTOR
+/gate/CPET/daughters/name sector
+/gate/CPET/daughters/insert cylinder
+/gate/sector/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/sector/geometry/setRmax 20.0 cm
+/gate/sector/geometry/setRmin 1 cm
+/gate/sector/geometry/setHeight 4. cm
+/gate/sector/setMaterial Air
+/gate/sector/vis/forceWireframe
+/gate/sector/vis/setVisible 1
+/gate/sector/vis/setColor white
+
+#	CASSETTE
+/gate/sector/daughters/name cassete
+/gate/sector/daughters/insert cylinder
+/gate/cassete/placement/setTranslation 0.0 0.0 0.0 cm
+/gate/cassete/geometry/setRmax 12. cm
+/gate/cassete/geometry/setRmin 1. cm
+/gate/cassete/geometry/setHeight 4. cm
+/gate/cassete/setMaterial Air
+/gate/cassete/vis/forceWireframe
+/gate/cassete/vis/setVisible 1
+/gate/cassete/vis/setColor white
+
+#	MODULE
+/gate/cassete/daughters/name head
+/gate/cassete/daughters/insert box
+/gate/head/placement/setTranslation 4.0 0.0 0.0 cm
+/gate/head/geometry/setXLength  6.0 cm
+/gate/head/geometry/setYLength 3.0 cm
+/gate/head/geometry/setZLength 3. cm
+/gate/head/setMaterial Air
+/gate/head/vis/setVisible 1
+
+# KHOI Pb CHUAN TRUC DETECTOR
+
+/gate/head/daughters/name                  Pbleft
+/gate/head/daughters/insert                box
+/gate/Pbleft/placement/setTranslation           -2.0 0.0 0.0 cm
+/gate/Pbleft/geometry/setXLength                 2.0 cm
+/gate/Pbleft/geometry/setYLength                 1.3 cm
+/gate/Pbleft/geometry/setZLength                 2.8 cm
+/gate/Pbleft/setMaterial                     	   Lead
+/gate/Pbleft/vis/setVisible                  	  1
+/gate/Pbleft/vis/setColor                        	 yellow
+
+# REPEAT LERT -> RIGHT
+/gate/Pbleft/repeaters/insert                   linear
+/gate/Pbleft/linear/setRepeatNumber               2
+/gate/Pbleft/linear/setRepeatVector		0. 1.7 0. cm
+
+
+#	CRYSTAL
+/gate/head/daughters/name                     crystal
+/gate/head/daughters/insert                   box
+/gate/crystal/placement/setTranslation          0.36 0.0 0.0 cm
+/gate/crystal/geometry/setXLength               2.52 cm
+/gate/crystal/geometry/setYLength               2.52 cm
+/gate/crystal/geometry/setZLength               2.52 cm
+/gate/crystal/setMaterial                       Air
+/gate/crystal/vis/setVisible                    1
+
+#	LSO layer
+/gate/crystal/daughters/name                  CsI
+/gate/crystal/daughters/insert                box
+/gate/CsI/placement/setTranslation            0.0 0.0 0.0 cm
+/gate/CsI/geometry/setXLength                 2.52 cm
+/gate/CsI/geometry/setYLength                 2.52 cm
+/gate/CsI/geometry/setZLength                 2.52 cm
+/gate/CsI/setMaterial                         CsI
+/gate/CsI/vis/setColor                        red
+
+#	R E P E A T HEAD
+/gate/head/repeaters/insert ring
+/gate/head/ring/setRepeatNumber 2
+
+#	A T T A C H    S Y S T E M 
+/gate/systems/CPET/sector/attach sector
+/gate/systems/CPET/cassette/attach cassete
+/gate/systems/CPET/module/attach head
+/gate/systems/CPET/crystal/attach crystal
+/gate/systems/CPET/layer0/attach CsI
+
+#	A T T A C H    C R Y S T A L  SD
+
+/gate/CsI/attachCrystalSD
+
+/gate/systems/CPET/describe
+
+
+
+

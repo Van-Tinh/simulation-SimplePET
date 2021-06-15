@@ -1,0 +1,13 @@
+# SOURCECONTAINER
+      /gate/CPET/daughters/name                          container
+      /gate/CPET/daughters/insert                        cylinder
+      /gate/container/placement/setTranslation            0 0 0.0 mm
+      /gate/container/geometry/setRmin                    0 mm
+      /gate/container/geometry/setRmax                    5 mm
+      /gate/container/geometry/setHeight                  2 mm
+      /gate/container/geometry/setPhiStart                0 deg
+      /gate/container/geometry/setDeltaPhi                360 deg
+      /gate/container/setMaterial                         PMMA
+      /gate/container/vis/setVisible                      1
+      /gate/container/vis/forceWireframe                    
+      /gate/container/vis/setColor                        grey

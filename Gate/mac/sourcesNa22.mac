@@ -1,0 +1,13 @@
+/gate/source/addSource Na22 gps
+       /gate/source/Na22/gps/particle       ion
+       /gate/source/Na22/gps/ion             11 22 0 0
+       /gate/source/Na22/setForcedUnstableFlag true
+       /gate/source/Na22/useDefaultHalfLife 
+       /gate/source/Na22/setActivity           1 Bq
+       /gate/source/Na22/gps/type          Volume
+       /gate/source/Na22/gps/shape         Cylinder
+       /gate/source/Na22/gps/radius        0.5 mm
+       /gate/source/Na22/gps/halfz         0.5 mm
+       /gate/source/Na22/gps/angtype       iso
+       /gate/source/Na22/attachTo          container
+      /gate/source/Na22/visualize  200 blue 3

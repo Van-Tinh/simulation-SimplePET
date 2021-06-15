@@ -1,0 +1,17 @@
+/gate/source/addSource F18LineSource
+/gate/source/F18LineSource/setActivity 1. becquerel
+
+/gate/source/F18LineSource/gps/particle e+
+/gate/source/F18LineSource/setForcedUnstableFlag true
+/gate/source/F18LineSource/setForcedHalfLife 6586.2 s
+/gate/source/F18LineSource/gps/energytype Fluor18
+/gate/source/F18LineSource/gps/type Volume
+/gate/source/F18LineSource/gps/shape Cylinder
+/gate/source/F18LineSource/gps/radius 1. mm
+/gate/source/F18LineSource/gps/halfz 0.5 mm
+/gate/source/F18LineSource/gps/angtype iso
+/gate/source/F18LineSource/gps/centre 0. 0. 0. cm
+
+/gate/source/F18LineSource/visualize  200 blue 3
+
+/gate/source/F18LineSource/attachTo          container

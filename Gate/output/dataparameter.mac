@@ -1,0 +1,9 @@
+ distancecrystal 60
+ TopAng 3
+ BotAng 9
+ LangeAng 45
+ numberminiStep 15
+ numberoneStep 40
+ Radius FOV 11.475
+ totaltime 599
+ timeStep 1
